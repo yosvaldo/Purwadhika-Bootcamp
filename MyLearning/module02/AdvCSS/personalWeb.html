@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Yosvaldo Ongko Cahyadi | Full-Stack Developer</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0B0B0F;
+        }
+
+        .glass {
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .hero-image {
+            transition:
+                filter 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+                transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: filter, opacity, transform;
+        }
+    </style>
+</head>
+
+<body class="text-white antialiased overflow-x-hidden">
+
+    <div class="fixed inset-0 -z-50 overflow-hidden">
+        <div class="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-blue-500/10 blur-[180px]"></div>
+        <div class="absolute bottom-[-200px] right-[-100px] w-[500px] h-[500px] rounded-full bg-purple-500/10 blur-[140px]"></div>
+    </div>
+
+    <div class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
+        <nav class="relative flex items-center gap-1 p-2 rounded-full border border-white/10 bg-white/[0.04] glass shadow-2xl">
+
+            <div id="nav-pill"
+                class="absolute top-2 left-0 h-[44px] rounded-full bg-white transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform opacity-0">
+            </div>
+
+            <a href="#home" data-section="home"
+                class="nav-item relative z-10 px-5 py-3 text-sm font-medium rounded-full transition-colors duration-300 text-neutral-400">
+                Home
+            </a>
+
+            <a href="#skills" data-section="skills"
+                class="nav-item relative z-10 px-5 py-3 text-sm font-medium rounded-full transition-colors duration-300 text-neutral-400">
+                Skills
+            </a>
+
+            <a href="#experience" data-section="experience"
+                class="nav-item relative z-10 px-5 py-3 text-sm font-medium rounded-full transition-colors duration-300 text-neutral-400">
+                Experience
+            </a>
+
+            <a href="#education" data-section="education"
+                class="nav-item relative z-10 px-5 py-3 text-sm font-medium rounded-full transition-colors duration-300 text-neutral-400">
+                Education
+            </a>
+
+            <a href="#community" data-section="community"
+                class="nav-item relative z-10 px-5 py-3 text-sm font-medium rounded-full transition-colors duration-300 text-neutral-400">
+                Community
+            </a>
+
+        </nav>
+    </div>
+
+    <div class="fixed inset-y-0 left-0 z-0 pointer-events-none flex items-end w-full max-w-[760px]">
+        <div class="relative w-full h-full flex items-end justify-center">
+
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-blue-500/20 blur-[160px]"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] rounded-full bg-cyan-400/10 blur-[120px]"></div>
+
+            <img id="profile-pic" src="pp1.svg" alt="Yosvaldo"
+                class="hero-image relative z-10 w-auto h-[85vh] max-w-[90vw] object-contain object-bottom block">
+
+        </div>
+    </div>
+
+    <main class="relative z-20 max-w-6xl mx-auto px-6 lg:px-8">
+
+        <section id="home" class="min-h-screen flex items-center justify-end">
+            <div class="w-full max-w-3xl ml-auto">
+                <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-gray-300 glass">
+                    <span class="h-2 w-2 rounded-full bg-green-400"></span>
+                    Available for collaboration
+                </div>
+
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold leading-[0.95] tracking-tight">
+                    Systems Engineer turned
+                    <span class="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                        Full-Stack Developer
+                    </span>
+                </h1>
+
+                <p class="mt-8 max-w-2xl text-lg leading-8 text-gray-400">
+                    Building reliable software, scalable operations, and impact-driven startups with strong technical and business execution.
+                </p>
+
+                <div class="mt-10 flex flex-wrap gap-4">
+                    <a href="mailto:yosvaldo.oc@gmail.com"
+                        class="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-black transition hover:scale-105">
+                        Contact Me
+                    </a>
+                    <a href="https://github.com/yosvaldo" target="_blank"
+                        class="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                        GitHub
+                    </a>
+                    <a href="https://www.linkedin.com/in/yosvaldo-ongko-cahyadi-88857bbb/" target="_blank"
+                        class="rounded-xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-28 border-t border-white/10">
+            <div class="max-w-3xl ml-auto">
+                <div class="mb-14">
+                    <p class="text-sm uppercase tracking-[0.3em] text-blue-400">Technical Expertise</p>
+                    <h2 class="mt-3 text-4xl font-bold">Skills & Technologies</h2>
+                </div>
+
+                <div class="grid gap-10 md:grid-cols-3">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Frontend</h3>
+                        <p class="text-gray-400 leading-8">TypeScript · React · TailwindCSS · Vite</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">Backend</h3>
+                        <p class="text-gray-400 leading-8">Node.js · Express · PostgreSQL · Prisma</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-6">DevOps</h3>
+                        <p class="text-gray-400 leading-8">Docker · Jest</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-28 border-t border-white/10">
+            <div class="max-w-3xl ml-auto">
+                <div class="mb-14">
+                    <p class="text-sm uppercase tracking-[0.3em] text-purple-400">Career Journey</p>
+                    <h2 class="mt-3 text-4xl font-bold">Work Experience</h2>
+                </div>
+
+                <div class="space-y-20">
+                    <article>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold">Co-Founder & Operations Lead</h3>
+                                <p class="mt-2 text-blue-300">Phenex</p>
+                            </div>
+                            <span class="text-sm text-gray-400">May 2020 — Present</span>
+                        </div>
+                        <ul class="mt-8 space-y-5 text-gray-400 leading-8">
+                            <li>Grew top-performing product sales to <span class="text-white font-medium">87,000+</span> units in B2B channels and <span class="text-white font-medium">12,000+</span> units in D2C marketplaces.</li>
+                            <li>Directed nationwide distribution scaling to <span class="text-white font-medium">240,000+</span> products across Indonesia.</li>
+                            <li>Maintained relationships with <span class="text-white font-medium">20+</span> distributors and <span class="text-white font-medium">3</span> manufacturing plants.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold">Co-Founder</h3>
+                                <p class="mt-2 text-purple-300">Money Mate</p>
+                            </div>
+                            <span class="text-sm text-gray-400">February 2025 — Present</span>
+                        </div>
+                        <ul class="mt-8 space-y-5 text-gray-400 leading-8">
+                            <li>Co-founded an impact-driven EdTech startup increasing financial literacy for children and teenagers.</li>
+                            <li>Secured initial investor funding and pitched at national startup events, including <span class="text-white font-medium">Meet the Investor #2</span> in Jogja.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="py-28 border-t border-white/10">
+            <div class="max-w-3xl ml-auto">
+                <div class="mb-14">
+                    <p class="text-sm uppercase tracking-[0.3em] text-cyan-400">Academic Background</p>
+                    <h2 class="mt-3 text-4xl font-bold">Education</h2>
+                </div>
+
+                <article>
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                        <div>
+                            <h3 class="text-2xl font-semibold">Bachelor of Engineering</h3>
+                            <p class="mt-2 text-cyan-300">Universitas Surabaya</p>
+                        </div>
+                        <span class="text-sm text-gray-400">GPA 3.72 / 4.00</span>
+                    </div>
+                    <ul class="mt-8 space-y-5 text-gray-400 leading-8">
+                        <li>Completed program ahead of schedule, finishing in the <span class="text-white font-medium">top 1%</span> of the faculty.</li>
+                        <li>Assistant Lecturer — Developed curriculum modules, designed examinations, and managed student grading pipelines for Operational Research.</li>
+                        <li>President of Table Tennis Student Club — Co-organized an inter-university tournament across <span class="text-white font-medium">3 campuses</span>.</li>
+                        <li>Won Honorable Mention at the International Conference on Culture, Technology, and Tourism.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="community" class="py-28 border-t border-white/10">
+            <div class="max-w-3xl ml-auto">
+                <div class="mb-14">
+                    <p class="text-sm uppercase tracking-[0.3em] text-pink-400">Beyond Work</p>
+                    <h2 class="mt-3 text-4xl font-bold">Community & Impact</h2>
+                </div>
+
+                <div class="space-y-20">
+                    <article>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold">Diaconia Coordinator</h3>
+                                <p class="mt-2 text-pink-300">GKI Manyar</p>
+                            </div>
+                            <span class="text-sm text-gray-400">2022 — Present</span>
+                        </div>
+                        <ul class="mt-8 space-y-5 text-gray-400 leading-8">
+                            <li>Architected a <span class="text-white font-medium">7-class</span> startup accelerator and mentorship program that guided <span class="text-white font-medium">2 teams</span> to secure seed funding.</li>
+                            <li>Co-created a <span class="text-white font-medium">4-class</span> career readiness framework and organized <span class="text-white font-medium">2</span> corporate visits for job seekers.</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                            <div>
+                                <h3 class="text-2xl font-semibold">Blood Donor</h3>
+                                <p class="mt-2 text-red-300">Palang Merah Indonesia</p>
+                            </div>
+                            <span class="text-sm text-gray-400">2012 — Present</span>
+                        </div>
+                        <ul class="mt-8 space-y-5 text-gray-400 leading-8">
+                            <li>Donated blood <span class="text-white font-medium">45 times</span> consistently over <span class="text-white font-medium">14 years</span>.</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <footer class="py-20 text-center text-sm text-gray-500">
+            © 2026 Yosvaldo Ongko Cahyadi
+        </footer>
+
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const profilePic = document.getElementById("profile-pic");
+            const navItems = document.querySelectorAll(".nav-item");
+            const sections = document.querySelectorAll("section[id]");
+            const pill = document.getElementById("nav-pill");
+
+            // =================================
+            // NAV PILL TRANSFORM
+            // =================================
+            function movePill(target) {
+                if (!target) return;
+                pill.style.width = `${target.offsetWidth}px`;
+                pill.style.transform = `translateX(${target.offsetLeft}px)`;
+                pill.style.opacity = "1";
+            }
+
+            // =================================
+            // PHOTO MOTION SYSTEM
+            // =================================
+            function updatePhotoBlur() {
+                const scrollY = window.scrollY;
+                const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+                // TOP
+                if (scrollY < 100) {
+                    profilePic.style.filter = "blur(0px)";
+                    profilePic.style.opacity = "1";
+                    profilePic.style.transform = "scale(1)";
+                }
+                // BOTTOM
+                else if (scrollY > maxScroll - 250) {
+                    profilePic.style.filter = "blur(0px)";
+                    profilePic.style.opacity = "1";
+                    profilePic.style.transform = "scale(1)";
+                }
+                // MIDDLE
+                else {
+                    const blurValue = Math.min(scrollY / 180, 12);
+                    profilePic.style.filter = `blur(${blurValue}px)`;
+                    profilePic.style.opacity = "0.35";
+                    profilePic.style.transform = "scale(1.03)";
+                }
+            }
+
+            // =================================
+            // ACTIVE NAVIGATION ENGINE
+            // =================================
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const activeId = entry.target.getAttribute("id");
+
+                        navItems.forEach((item) => {
+                            const isActive = item.dataset.section === activeId;
+
+                            if (isActive) {
+                                item.classList.remove("text-neutral-400");
+                                item.classList.add("text-black");
+                                movePill(item);
+                            } else {
+                                item.classList.remove("text-black");
+                                item.classList.add("text-neutral-400");
+                            }
+                        });
+                    }
+                });
+            }, {
+                rootMargin: "-45% 0px -45% 0px",
+                threshold: 0
+            });
+
+            sections.forEach(section => observer.observe(section));
+
+            // =================================
+            // EVENTS INTERFACING
+            // =================================
+            window.addEventListener("scroll", updatePhotoBlur, { passive: true });
+
+            window.addEventListener("resize", () => {
+                const active = document.querySelector(".nav-item.text-black");
+                if (active) movePill(active);
+            });
+
+            // =================================
+            // TIMEOUT LAYOUT INITIALIZER
+            // =================================
+            updatePhotoBlur();
+            
+            setTimeout(() => {
+                if (navItems[0]) {
+                    navItems[0].classList.remove("text-neutral-400");
+                    navItems[0].classList.add("text-black");
+                    movePill(navItems[0]);
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
