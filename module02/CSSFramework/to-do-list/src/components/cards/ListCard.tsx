@@ -3,7 +3,7 @@ import { ScrollArea } from "../ui/scroll-area"
 import CheckboxListItem from "../items/CheckboxListItem"
 import { Button } from "../ui/button"
 import type { TToDoFilter, TTodoList } from "@/models/to-do-item.model"
-import type { MouseEvent } from "react"
+import { memo, type MouseEvent } from "react"
 import type IToDoItem from "@/models/to-do-item.model"
 import FilterTextButtons from "../buttons/FilterTextButtons"
 import EmptyList from "../empty/EmptyList"
@@ -59,4 +59,4 @@ const ListCard = ({
     </Card>
   )
 }
-export default ListCard
+export default memo(ListCard);
