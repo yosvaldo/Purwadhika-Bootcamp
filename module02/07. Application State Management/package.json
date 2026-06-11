@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "backendless": "^8.0.0",
+    "formik": "^2.4.9",
+    "yup": "^1.7.1"
+  }
+}
