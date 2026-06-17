@@ -7,9 +7,32 @@ import type IToDoItem from "./models/to-do-item.model";
 import HCenteredContainer from "./components/container/HCenteredContainer";
 import FilterTextButtons from "./components/buttons/FilterTextButtons";
 import { Card } from "./components/ui/card";
+import { backendlessApi } from "./configs/axios.config";
 
 export function App() {
 	const [todoList, setTodoList] = useState<TTodoList>(ToDoListData);
+	const [isLoading, setIsLoading] = useState<boolean>(false);
+	const [error, setError] = useState<string | null>(null);
+
+	const getToDoListData = async () => {
+		setIsLoading(true);
+		try {
+			const res = await backendlessApi.get("/ToDos", {
+				params: {
+					where: `ownerId`
+				}
+			});
+			setTodoList(res.data);
+		} catch (error) {
+			if (error instanceof AxiosError) {
+				setError(error);
+			}
+			setError(error as Error);
+		} finally {
+			setIsLoading(false);
+		}
+	};
+
 	const [currentFilter, setCurrentFilter] = useState<TToDoFilter>("All");
 
 	const filteredTodoList = useMemo(() => {
@@ -31,14 +54,15 @@ export function App() {
 	}, [todoList]);
 
 	const handleAddItem = useCallback(
-		(title: string, done: boolean) => {
-			const lastItemIndex = todoList.length - 1;
-			const newItem: IToDoItem = {
-				id: todoList.length > 0 ? todoList[lastItemIndex].id + 1 : 1,
-				title,
-				isDone: done,
-			};
-			setTodoList((prevList) => [...prevList, newItem]);
+		async (title: string, done: boolean) => {
+			try {
+				await backendlessApi.post("/ToDos"), {title, isDone});
+			} catch(error) {
+				if (error instanceof AxiosError) {
+					setError(error);
+				}
+				setError(error as Error);
+			}
 		},
 		[todoList],
 	);
@@ -51,14 +75,26 @@ export function App() {
 		setCurrentFilter(filter);
 	}, []);
 
-	const handleUpdateItem = useCallback((updatedItem: IToDoItem) => {
-		setTodoList((prevList) =>
-			prevList.map((item) => (item.id === updatedItem.id ? updatedItem : item)),
-		);
+	const handleUpdateItem = useCallback(async (updatedItem: IToDoItem) => {
+		try {
+			await backendlessApi.put(`/ToDos/${updatedItem.id}`), {
+				title: updatedItem.title,
+
+			}
+		} catch(error) {
+
+		}
 	}, []);
 
-	const handleDeleteItem = useCallback((id: number) => {
-		setTodoList((prevList) => prevList.filter((item) => item.id !== id));
+	const handleDeleteItem = useCallback( async (id: number) => {
+		try {
+			await backendlessApi.delete(`/ToDos/${objectId}`);
+			toast.success("Todo item deleted successfully!");
+			await getToDoListData();
+		} catch(error) {
+			if()
+
+		}
 	}, []);
 
 	useEffect(() => {

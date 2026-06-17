@@ -7,6 +7,8 @@ import { memo, type MouseEvent } from "react"
 import type IToDoItem from "@/models/to-do-item.model"
 import FilterTextButtons from "../buttons/FilterTextButtons"
 import EmptyList from "../empty/EmptyList"
+import { Spinner } from "../ui/spinner"
+import { Bomb } from "../ui/bomb"
 
 type Props = {
   data: TTodoList
@@ -30,7 +32,17 @@ const ListCard = ({
     <Card className="gap-0 p-0">
       <CardContent className="p-0">
         <ScrollArea className="h-64 md:h-80">
-          {data.length > 0 ? (
+          { isLoading ? (
+            <div className="flex h-full items-center justify-center">
+              <Spinner className="size-8" />
+            </div>
+          ) : error ? (
+            <div className="flex h-full items-center justify-center">
+              <div className="flex flex-col items-center gap-4">
+                <Bomb 
+              </div>
+          )
+          data.length > 0 ? (
             data.map((item) => (
               <CheckboxListItem
                 key={item.id}
