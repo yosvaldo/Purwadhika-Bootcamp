@@ -11,7 +11,7 @@ type TTodoItem = {
     isDone: boolean;
 };
 
-const todoListJSONPath = "./todolist.data.json";
+const todosFilePath = "./todolist.data.json";
 
 const PORT: number = 8000;
 
@@ -64,23 +64,51 @@ app.post("/todos", (req: Request, res: Response) => {
         if (err) {
             res.status(500).send({
                 message: "Error add new to-do item",
-                error: err.message,
+                error: err.message
             });
         }
-    });
 
-    res.status(201).send({
-        message: "Successfully add new to-do item.",
-        data: newTodo,
+        res.status(201).send({
+            message: "Successfully add new to-do item.",
+            data: newTodo
+        });
     });
 });
 
 app.put("/todos/:id", (req: Request, res: Response) => {
     const {id} = req.params;
-    const updatedTodo = { id: Number(id), ...req.body };
-    res.send({
-        message: `This endpoint will update 1 to-do item with id ${id},
-        data: updatedTodo`,
+    const todoId = Number(id);
+
+    const existingTodo = todos.find((todo) => todo.id === todoId);
+
+    if(!existingTodo) {
+        return res.status(404).send({
+            message: `To-do item with id ${id} couldn't be found`
+        });
+    }
+
+    const updatedTodo = {
+        ...existingTodo,
+        ...req.body,
+        id: todoId
+    };
+
+    const updatedTodosArray = todos.map((todo) => {
+        return todo.id === todoId ? updatedTodo : todo;
+    });
+
+    fs.writeFile(todosFilePath, JSON.stringify(updatedTodosArray), (err) => {
+        if (err) {
+            res.status(500).send({
+                message: "Error update existing to-do item",
+                error: err.message
+            });
+        }
+
+        res.status(201).send({
+            message: `Successfully update existing to-do item with id ${id}`,
+            data: updatedTodo
+        });
     });
 });
 
